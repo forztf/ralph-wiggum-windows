@@ -6,7 +6,7 @@ Thank you for your interest in contributing to the Ralph Wiggum Windows plugin!
 
 ### Reporting Issues
 
-1. Check if the issue already exists in [GitHub Issues](https://github.com/YOUR_USERNAME/ralph-wiggum-windows/issues)
+1. Check if the issue already exists in [GitHub Issues](https://github.com/Arthur742Ramos/ralph-wiggum-windows/issues)
 2. If not, create a new issue with:
    - Clear description of the problem
    - Steps to reproduce

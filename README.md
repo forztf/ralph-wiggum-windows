@@ -35,7 +35,7 @@ while ($true) {
 
 ```powershell
 # Clone directly to Claude Code plugins folder
-git clone https://github.com/YOUR_USERNAME/ralph-wiggum-windows ~/.claude/plugins/ralph-wiggum-windows
+git clone https://github.com/Arthur742Ramos/ralph-wiggum-windows ~/.claude/plugins/ralph-wiggum-windows
 ```
 
 ### Option 2: Manual installation
