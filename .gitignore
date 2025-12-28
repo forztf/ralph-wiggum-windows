@@ -1,0 +1,23 @@
+# Ralph Wiggum state files (generated during use)
+ralph-loop.local.md
+*.local.md
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
