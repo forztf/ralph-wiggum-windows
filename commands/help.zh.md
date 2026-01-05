@@ -2,7 +2,7 @@
 description: "解释 Ralph Wiggum 技术和可用命令"
 ---
 
-# Ralph Wiggum 插件帮助 (Windows)
+# Ralph Wiggum 插件帮助 (Windows) V1.0.1
 
 请向用户解释以下内容：
 

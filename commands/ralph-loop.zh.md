@@ -18,22 +18,20 @@ if (Test-Path .claude/ralph-loop.local.md) {
   if ($content -match 'completion_promise:\s*"([^"]+)"') {
     $promise = $Matches[1]
     Write-Host ""
-    Write-Host "CRITICAL - Ralph 循环完成承诺"
+    Write-Host "关键——Ralph 循环完成承诺"
     Write-Host ""
-    Write-Host "要完成此循环，输出此确切的文本："
+    Write-Host "要完成该循环，请输出以下完全一致的文本："
     Write-Host "  <promise>$promise</promise>"
     Write-Host ""
     Write-Host "严格要求（不得违反）："
-    Write-Host "  - 完全按照上面显示使用 <promise> XML 标签"
-    Write-Host "  - 陈述必须完全且明确地为真"
-    Write-Host "  - 不要输出虚假承诺来退出循环"
-    Write-Host "  - 即使你认为应该退出也不要撒谎"
+    Write-Host "  - 必须完全按照上方所示使用 <promise> XML 标签"
+    Write-Host "  - 该陈述必须完全且毫无歧义地为真"
+    Write-Host "  - 不得为了退出循环而输出虚假陈述"
+    Write-Host "  - 不得撒谎，即使你认为应该退出循环"
     Write-Host ""
-    Write-Host "重要 - 不要绕过循环："
-    Write-Host "  即使你认为自己卡住了、任务是不可能的，"
-    Write-Host "  或者你已经运行了太久 - 你绝不能输出"
-    Write-Host "  虚假的承诺陈述。循环设计为持续运行"
-    Write-Host "  直到承诺真正为真。相信这个过程。"
+    Write-Host "重要 - 不要规避循环："
+    Write-Host "  即使你认为自己被卡住了、任务不可能完成，或运行时间过长——你也绝不能输出虚假的承诺陈述。"
+    Write-Host "  该循环被设计为在承诺真正为真之前持续运行。请信任这个过程。"
   }
 }
 ```
