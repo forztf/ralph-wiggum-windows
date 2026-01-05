@@ -1,6 +1,6 @@
 {
   "name": "ralph-wiggum-windows",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Windows-compatible implementation of the Ralph Wiggum technique - continuous self-referential AI loops for iterative development. Uses PowerShell instead of bash/jq.",
   "author": {
     "name": "Arthur Freitas",
