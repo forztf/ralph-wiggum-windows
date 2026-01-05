@@ -1,14 +1,14 @@
 {
-  "name": "open-skilled-sdd-marketplace",
+  "name": "forztf-marketplace",
   "owner": {
     "name": "forztf"
   },
-  "description": "Official marketplace for Open Spec-Driven Development Claude Code plugin",
+  "description": "forztf marketplace Claude Code plugin",
   "plugins": [
     {
-      "name": "open-skilled-sdd",
+      "name": "ralph-wiggum-windows",
       "source": "./",
-      "description": "open spec-driven development workflow: OpenSpec, PRPs, Spec Kit, spec-workflow-mcp, BMad-Method, 6A workflow"
+      "description": "Windows-compatible implementation of the Ralph Wiggum technique - continuous self-referential AI loops for iterative development. Uses PowerShell instead of bash/jq."
     }
   ]
 }
