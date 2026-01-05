@@ -131,7 +131,7 @@ started_at: "$startedAt"
 $prompt
 "@
 
-Set-Content -Path ".claude/ralph-loop.local.md" -Value $stateContent
+Set-Content -Path ".claude/ralph-loop.local.md" -Value $stateContent -Encoding UTF8
 
 # Output setup message
 $maxIterDisplay = if ($maxIterations -gt 0) { $maxIterations } else { "unlimited" }

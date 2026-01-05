@@ -154,7 +154,7 @@ $promptText = $promptMatch.Groups[1].Value.Trim()
 
 # Update iteration in state file
 $newContent = $content -replace 'iteration:\s*\d+', "iteration: $nextIteration"
-Set-Content $ralphStateFile -Value $newContent -NoNewline
+Set-Content $ralphStateFile -Value $newContent -NoNewline -Encoding UTF8
 
 # Build system message
 if ($completionPromise) {
