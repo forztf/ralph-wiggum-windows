@@ -6,10 +6,7 @@
     "name": "Arthur Freitas",
     "url": "https://github.com/forztf"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/forztf/ralph-wiggum-windows"
-  },
+  "repository": "https://github.com/forztf/ralph-wiggum-windows",
   "license": "MIT",
   "keywords": [
     "claude-code",
