@@ -32,6 +32,11 @@ while ($true) {
 ## 安装
 
 ```powershell
+# uninstall old
+/plugin uninstall ralph-wiggum-windows@forztf-marketplace
+/plugin marketplace remove forztf/ralph-wiggum-windows
+
+# install new
 /plugin marketplace add forztf/ralph-wiggum-windows
 /plugin install ralph-wiggum-windows@forztf-marketplace
 ```
@@ -144,7 +149,7 @@ Get-Content .claude/ralph-loop.local.md -Head 10
 **与原始版本的变更：**
 | 原始版本 (Unix) | 此分支 (Windows) |
 |-----------------|---------------------|
-| `stop-hook.sh` | `stop-hook.ps1` |
+| `stop-hook.sh` | `stop-hook.zh.ps1` |
 | `jq` 用于 JSON 解析 | `ConvertFrom-Json` |
 | bash 脚本 | PowerShell 脚本 |
 | Unix 路径约定 | Windows 路径约定 |
@@ -160,9 +165,9 @@ ralph-wiggum-windows/
 │   ├── help.md              # /help 命令
 │   └── ralph-loop.md        # /ralph-loop 命令
 ├── hooks/
-│   └── stop-hook.ps1        # 停止钩子 (PowerShell)
+│   └── stop-hook.zh.ps1        # 停止钩子 (PowerShell)
 ├── scripts/
-│   └── setup-ralph-loop.ps1 # 设置脚本 (PowerShell)
+│   └── setup-ralph-loop.zh.ps1 # 设置脚本 (PowerShell)
 ├── LICENSE
 ├── CONTRIBUTING.md
 └── README.md

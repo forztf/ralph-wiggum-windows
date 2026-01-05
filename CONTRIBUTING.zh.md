@@ -36,8 +36,8 @@
 ```
 .claude-plugin/plugin.json  - 插件清单（名称、版本、描述）
 commands/*.md               - 斜杠命令定义
-hooks/*.ps1                 - PowerShell 钩子（stop-hook.ps1）
-scripts/*.ps1               - 辅助脚本
+hooks/*.zh.ps1                 - PowerShell 钩子（stop-hook.zh.ps1）
+scripts/*.zh.ps1               - 辅助脚本
 ```
 
 ### 测试你的更改

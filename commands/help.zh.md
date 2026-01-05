@@ -68,8 +68,8 @@ while ($true) {
 
 这是一个与 Windows 兼容的分支，使用 PowerShell 而不是 bash/jq：
 
-- **停止钩子**：`stop-hook.ps1` (PowerShell)
-- **设置脚本**：`setup-ralph-loop.ps1` (PowerShell)
+- **停止钩子**：`stop-hook.zh.ps1` (PowerShell)
+- **设置脚本**：`setup-ralph-loop.zh.ps1` (PowerShell)
 - **无 jq 依赖**：使用 `ConvertFrom-Json`
 - **无 bash 依赖**：纯 PowerShell
 

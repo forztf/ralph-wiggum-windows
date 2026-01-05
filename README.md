@@ -32,6 +32,11 @@ while ($true) {
 ## Installation
 
 ```powershell
+# uninstall old
+/plugin uninstall ralph-wiggum-windows@forztf-marketplace
+/plugin marketplace remove forztf/ralph-wiggum-windows
+
+# install new
 /plugin marketplace add forztf/ralph-wiggum-windows
 /plugin install ralph-wiggum-windows@forztf-marketplace
 ```

@@ -1,7 +1,7 @@
 ---
 description: "在当前会话中启动 Ralph Wiggum 循环"
 argument-hint: "PROMPT [--max-iterations N] [--completion-promise TEXT]"
-allowed-tools: ["Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/scripts/setup-ralph-loop.ps1\")"]
+allowed-tools: ["Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/scripts/setup-ralph-loop.zh.ps1\")"]
 hide-from-slash-command-tool: "true"
 ---
 
@@ -10,7 +10,7 @@ hide-from-slash-command-tool: "true"
 执行设置脚本以初始化 Ralph 循环：
 
 ```!
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "${CLAUDE_PLUGIN_ROOT}/scripts/setup-ralph-loop.ps1" $ARGUMENTS
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "${CLAUDE_PLUGIN_ROOT}/scripts/setup-ralph-loop.zh.ps1" $ARGUMENTS
 
 # 如果设置了完成承诺，则提取并显示
 if (Test-Path .claude/ralph-loop.local.md) {
