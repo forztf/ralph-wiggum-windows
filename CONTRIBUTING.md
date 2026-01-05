@@ -45,9 +45,9 @@ scripts/*.ps1               - Helper scripts
 1. Copy your modified plugin to `~/.claude/plugins/ralph-wiggum-windows`
 2. Restart Claude Code
 3. Test all commands:
-   - `/ralph-wiggum:help`
-   - `/ralph-wiggum:ralph-loop "test task" --max-iterations 2`
-   - `/ralph-wiggum:cancel-ralph`
+   - `/ralph-wiggum-windows:help`
+   - `/ralph-wiggum-windows:ralph-loop "test task" --max-iterations 2`
+   - `/ralph-wiggum-windows:cancel-ralph`
 
 ## Questions?
 

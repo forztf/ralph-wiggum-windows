@@ -31,41 +31,35 @@ while ($true) {
 
 ## Installation
 
-### Option 1: Clone to plugins directory (Recommended)
-
 ```powershell
-# Clone directly to Claude Code plugins folder
-git clone https://github.com/forztf/ralph-wiggum-windows ~/.claude/plugins/ralph-wiggum-windows
+/plugin marketplace add forztf/ralph-wiggum-windows
+/plugin install ralph-wiggum-windows@forztf-marketplace
 ```
 
-### Option 2: Manual installation
 
-1. Download or clone this repository
-2. Copy the entire folder to `~/.claude/plugins/ralph-wiggum-windows`
-3. Restart Claude Code
 
 ### Verify Installation
 
 After installation, you should see these commands available in Claude Code:
-- `/ralph-wiggum:ralph-loop` - Start a Ralph loop
-- `/ralph-wiggum:cancel-ralph` - Cancel active loop
-- `/ralph-wiggum:help` - Show help
+- `/ralph-wiggum-windows:ralph-loop` - Start a Ralph loop
+- `/ralph-wiggum-windows:cancel-ralph` - Cancel active loop
+- `/ralph-wiggum-windows:help` - Show help
 
 ## Quick Start
 
 ```
-/ralph-wiggum:ralph-loop "Build a REST API for todos with CRUD operations, validation, and tests" --completion-promise "API COMPLETE" --max-iterations 30
+/ralph-wiggum-windows:ralph-loop "Build a REST API for todos with CRUD operations, validation, and tests" --completion-promise "API COMPLETE" --max-iterations 30
 ```
 
 ## Commands
 
-### `/ralph-wiggum:ralph-loop`
+### `/ralph-wiggum-windows:ralph-loop`
 
 Start a Ralph loop in your current session.
 
 **Usage:**
 ```
-/ralph-wiggum:ralph-loop "<prompt>" [--max-iterations N] [--completion-promise "<text>"]
+/ralph-wiggum-windows:ralph-loop "<prompt>" [--max-iterations N] [--completion-promise "<text>"]
 ```
 
 **Options:**
@@ -77,29 +71,29 @@ Start a Ralph loop in your current session.
 **Examples:**
 ```
 # Run until "DONE" is achieved, max 50 iterations
-/ralph-wiggum:ralph-loop "Refactor the cache layer for better performance" --completion-promise "DONE" --max-iterations 50
+/ralph-wiggum-windows:ralph-loop "Refactor the cache layer for better performance" --completion-promise "DONE" --max-iterations 50
 
 # Run for exactly 10 iterations
-/ralph-wiggum:ralph-loop "Explore optimization opportunities" --max-iterations 10
+/ralph-wiggum-windows:ralph-loop "Explore optimization opportunities" --max-iterations 10
 
 # Run indefinitely (use with caution!)
-/ralph-wiggum:ralph-loop "Continuously improve test coverage"
+/ralph-wiggum-windows:ralph-loop "Continuously improve test coverage"
 ```
 
-### `/ralph-wiggum:cancel-ralph`
+### `/ralph-wiggum-windows:cancel-ralph`
 
 Cancel an active Ralph loop immediately.
 
 ```
-/ralph-wiggum:cancel-ralph
+/ralph-wiggum-windows:cancel-ralph
 ```
 
-### `/ralph-wiggum:help`
+### `/ralph-wiggum-windows:help`
 
 Display comprehensive help about the Ralph Wiggum technique and all available commands.
 
 ```
-/ralph-wiggum:help
+/ralph-wiggum-windows:help
 ```
 
 ## Completion Promises
@@ -184,7 +178,7 @@ ralph-wiggum-windows/
 - Restart Claude Code
 
 ### Loop not stopping
-- Use `/ralph-wiggum:cancel-ralph` to force stop
+- Use `/ralph-wiggum-windows:cancel-ralph` to force stop
 - Manually delete `.claude/ralph-loop.local.md` in your project directory
 
 ### PowerShell execution policy errors
