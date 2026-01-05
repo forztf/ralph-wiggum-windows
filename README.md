@@ -31,41 +31,82 @@ while ($true) {
 
 ## Installation
 
-### Option 1: Clone to plugins directory (Recommended)
+### Option 1: Project-Level Installation (Recommended)
+
+Install Ralph Wiggum for a specific project only:
+
+```powershell
+# Navigate to your project directory
+cd C:\path\to\your\project
+
+# Download and run installer
+irm https://raw.githubusercontent.com/Arthur742Ramos/ralph-wiggum-windows/main/install.ps1 | iex
+```
+
+Or if you've already cloned the repository:
+
+```powershell
+# Run installer from cloned repo
+powershell -ExecutionPolicy Bypass -File path\to\ralph-wiggum-windows\install.ps1
+```
+
+The installer will automatically:
+- Clone the repository (if needed)
+- Create required directories in `.claude/plugins/`
+- Copy all files to the correct locations
+- Verify the installation
+- Clean up temporary files
+
+Use `-KeepSource` flag to keep the source repository after installation.
+
+### Option 2: Global Installation
+
+Install globally for all projects:
 
 ```powershell
 # Clone directly to Claude Code plugins folder
 git clone https://github.com/Arthur742Ramos/ralph-wiggum-windows ~/.claude/plugins/ralph-wiggum-windows
 ```
 
-### Option 2: Manual installation
+### Option 3: Manual Installation
 
 1. Download or clone this repository
-2. Copy the entire folder to `~/.claude/plugins/ralph-wiggum-windows`
+2. Copy the entire folder to `~/.claude/plugins/ralph-wiggum-windows` (global) or `.claude/plugins/ralph-wiggum-windows` (project-level)
 3. Restart Claude Code
 
 ### Verify Installation
 
-After installation, you should see these commands available in Claude Code:
-- `/ralph-wiggum:ralph-loop` - Start a Ralph loop
-- `/ralph-wiggum:cancel-ralph` - Cancel active loop
-- `/ralph-wiggum:help` - Show help
+After installation, validate the plugin and restart Claude Code:
+
+```powershell
+# For project-level installation
+claude plugin validate .claude/plugins/ralph-wiggum-windows
+
+# For global installation
+claude plugin validate ~/.claude/plugins/ralph-wiggum-windows
+```
+
+You should see these commands available in Claude Code:
+- `/ralph-wiggum-windows:ralph-loop` - Start a Ralph loop
+- `/ralph-wiggum-windows:cancel-ralph` - Cancel active loop
+- `/ralph-wiggum-windows:help` - Show general help
+- `/ralph-wiggum-windows:help-ralph` - Show detailed Ralph Wiggum technique guide
 
 ## Quick Start
 
 ```
-/ralph-wiggum:ralph-loop "Build a REST API for todos with CRUD operations, validation, and tests" --completion-promise "API COMPLETE" --max-iterations 30
+/ralph-wiggum-windows:ralph-loop "Build a REST API for todos with CRUD operations, validation, and tests" --completion-promise "API COMPLETE" --max-iterations 30
 ```
 
 ## Commands
 
-### `/ralph-wiggum:ralph-loop`
+### `/ralph-wiggum-windows:ralph-loop`
 
 Start a Ralph loop in your current session.
 
 **Usage:**
 ```
-/ralph-wiggum:ralph-loop "<prompt>" [--max-iterations N] [--completion-promise "<text>"]
+/ralph-wiggum-windows:ralph-loop "<prompt>" [--max-iterations N] [--completion-promise "<text>"]
 ```
 
 **Options:**
@@ -77,29 +118,29 @@ Start a Ralph loop in your current session.
 **Examples:**
 ```
 # Run until "DONE" is achieved, max 50 iterations
-/ralph-wiggum:ralph-loop "Refactor the cache layer for better performance" --completion-promise "DONE" --max-iterations 50
+/ralph-wiggum-windows:ralph-loop "Refactor the cache layer for better performance" --completion-promise "DONE" --max-iterations 50
 
 # Run for exactly 10 iterations
-/ralph-wiggum:ralph-loop "Explore optimization opportunities" --max-iterations 10
+/ralph-wiggum-windows:ralph-loop "Explore optimization opportunities" --max-iterations 10
 
 # Run indefinitely (use with caution!)
-/ralph-wiggum:ralph-loop "Continuously improve test coverage"
+/ralph-wiggum-windows:ralph-loop "Continuously improve test coverage"
 ```
 
-### `/ralph-wiggum:cancel-ralph`
+### `/ralph-wiggum-windows:cancel-ralph`
 
 Cancel an active Ralph loop immediately.
 
 ```
-/ralph-wiggum:cancel-ralph
+/ralph-wiggum-windows:cancel-ralph
 ```
 
-### `/ralph-wiggum:help`
+### `/ralph-wiggum-windows:help`
 
 Display comprehensive help about the Ralph Wiggum technique and all available commands.
 
 ```
-/ralph-wiggum:help
+/ralph-wiggum-windows:help
 ```
 
 ## Completion Promises
@@ -166,17 +207,37 @@ ralph-wiggum-windows/
 ├── commands/
 │   ├── cancel-ralph.md      # /cancel-ralph command
 │   ├── help.md              # /help command
+│   ├── help-ralph.md        # /help-ralph command (detailed guide)
 │   └── ralph-loop.md        # /ralph-loop command
 ├── hooks/
 │   └── stop-hook.ps1        # Stop hook (PowerShell)
 ├── scripts/
 │   └── setup-ralph-loop.ps1 # Setup script (PowerShell)
+├── install.ps1              # Automatic installer script
 ├── LICENSE
 ├── CONTRIBUTING.md
 └── README.md
 ```
 
+## Debugging
+
+Debug logs are automatically written to `.claude/ralph-debug.log` in your project directory whenever the stop hook runs. This file contains:
+- Timestamps for each hook trigger
+- Parsed state file values (iteration, max iterations, completion promise)
+- Transcript parsing results
+- Success/failure status for each iteration
+
+To view debug logs:
+```powershell
+Get-Content .claude/ralph-debug.log
+```
+
 ## Troubleshooting
+
+### Plugin not recognized / Commands not showing
+- Run `claude plugin validate ~/.claude/plugins/ralph-wiggum-windows` to check for errors
+- If validation fails, check that `plugin.json` has the correct format (especially `repository` should be a string URL, not an object)
+- Restart Claude Code after fixing any issues
 
 ### Loop not starting
 - Verify the plugin is installed in `~/.claude/plugins/ralph-wiggum-windows`
@@ -184,7 +245,7 @@ ralph-wiggum-windows/
 - Restart Claude Code
 
 ### Loop not stopping
-- Use `/ralph-wiggum:cancel-ralph` to force stop
+- Use `/ralph-wiggum-windows:cancel-ralph` to force stop
 - Manually delete `.claude/ralph-loop.local.md` in your project directory
 
 ### PowerShell execution policy errors

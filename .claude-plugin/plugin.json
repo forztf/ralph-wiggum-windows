@@ -6,10 +6,7 @@
     "name": "Arthur Freitas",
     "url": "https://github.com/Arthur742Ramos"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Arthur742Ramos/ralph-wiggum-windows"
-  },
+  "repository": "https://github.com/Arthur742Ramos/ralph-wiggum-windows",
   "license": "MIT",
   "keywords": [
     "claude-code",
