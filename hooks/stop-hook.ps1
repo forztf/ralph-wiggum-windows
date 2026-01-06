@@ -19,6 +19,15 @@ Write-DebugLog "=== Stop hook triggered ==="
 $hookInput = $input | Out-String
 Write-DebugLog "Hook input received: $($hookInput.Substring(0, [Math]::Min(500, $hookInput.Length)))"
 
+# ====================================================================
+# RALPH WIGGUM STOP HOOK TRIGGERED
+# ====================================================================
+Write-Host ""
+Write-Host "===================================================================="
+Write-Host "  STOP HOOK TRIGGERED - Ralph Loop Active"
+Write-Host "===================================================================="
+Write-Host ""
+
 # Check if ralph-loop is active
 $ralphStateFile = ".claude/ralph-loop.local.md"
 
