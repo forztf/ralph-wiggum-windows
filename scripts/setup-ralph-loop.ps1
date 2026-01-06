@@ -1,4 +1,4 @@
-# Ralph Loop Setup Script (Windows/PowerShell)
+﻿# Ralph Loop Setup Script (Windows/PowerShell)
 # Creates state file for in-session Ralph loop
 
 param(
@@ -162,3 +162,4 @@ if ($prompt) {
     Write-Host ""
     Write-Host $prompt
 }
+

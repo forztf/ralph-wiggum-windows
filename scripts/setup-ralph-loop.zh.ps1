@@ -1,4 +1,4 @@
-# Ralph 循环设置脚本 (Windows/PowerShell)
+﻿# Ralph 循环设置脚本 (Windows/PowerShell)
 # 为会话内 Ralph 循环创建状态文件
 
 param(
@@ -171,3 +171,4 @@ if ($prompt) {
     Write-Host ""
     Write-Host $prompt
 }
+
