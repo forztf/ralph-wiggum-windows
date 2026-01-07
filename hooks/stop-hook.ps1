@@ -18,20 +18,11 @@ function Write-DebugLog {
     Add-Content -Path $DEBUG_LOG -Value "[$timestamp] $Message" -ErrorAction SilentlyContinue
 }
 
-Write-DebugLog "=== Stop hook triggered ==="
+Write-DebugLog "======================== Stop hook triggered ========================"
 
 # Read hook input from stdin (advanced stop hook API)
 $hookInput = $input | Out-String
 Write-DebugLog "Hook input received: $($hookInput.Substring(0, [Math]::Min(500, $hookInput.Length)))"
-
-# ====================================================================
-# RALPH WIGGUM STOP HOOK TRIGGERED
-# ====================================================================
-Write-Host ""
-Write-Host "===================================================================="
-Write-Host "  STOP HOOK TRIGGERED - Ralph Loop Active"
-Write-Host "===================================================================="
-Write-Host ""
 
 # Check if ralph-loop is active
 $ralphStateFile = ".claude/ralph-loop.local.md"

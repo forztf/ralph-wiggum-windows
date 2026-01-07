@@ -1,7 +1,3 @@
-# Ralph Wiggum state files (generated during use)
-ralph-loop.local.md
-*.local.md
-
 # IDE
 .idea/
 .vscode/
