@@ -4,6 +4,11 @@
 
 $ErrorActionPreference = "Stop"
 
+# Ensure UTF-8 encoding handling (fixes character encoding issues)
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$PSDefaultParameterValues['*:Encoding'] = 'utf8'
+$OutputEncoding = [System.Text.Encoding]::UTF8
+
 # Debug log file
 $DEBUG_LOG = ".claude/ralph-debug.log"
 
