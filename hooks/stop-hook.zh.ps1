@@ -4,8 +4,22 @@
 
 $ErrorActionPreference = "Stop"
 
+# 确保 UTF-8 编码处理（修复中文乱码问题）
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$PSDefaultParameterValues['*:Encoding'] = 'utf8'
+$OutputEncoding = [System.Text.Encoding]::UTF8
+
 # 从 stdin 读取钩子输入（高级停止钩子 API）
 $hookInput = $input | Out-String
+
+# ====================================================================
+# RALPH WIGGUM STOP HOOK TRIGGERED
+# ====================================================================
+Write-Host ""
+Write-Host "===================================================================="
+Write-Host "  STOP HOOK TRIGGERED - Ralph Loop Active"
+Write-Host "===================================================================="
+Write-Host ""
 
 # 检查 ralph-loop 是否激活
 $ralphStateFile = ".claude/ralph-loop.local.md"

@@ -4,6 +4,11 @@
 
 $ErrorActionPreference = "Stop"
 
+# Ensure UTF-8 encoding handling (fixes character encoding issues)
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$PSDefaultParameterValues['*:Encoding'] = 'utf8'
+$OutputEncoding = [System.Text.Encoding]::UTF8
+
 # Debug log file
 $DEBUG_LOG = ".claude/ralph-debug.log"
 
@@ -18,6 +23,15 @@ Write-DebugLog "=== Stop hook triggered ==="
 # Read hook input from stdin (advanced stop hook API)
 $hookInput = $input | Out-String
 Write-DebugLog "Hook input received: $($hookInput.Substring(0, [Math]::Min(500, $hookInput.Length)))"
+
+# ====================================================================
+# RALPH WIGGUM STOP HOOK TRIGGERED
+# ====================================================================
+Write-Host ""
+Write-Host "===================================================================="
+Write-Host "  STOP HOOK TRIGGERED - Ralph Loop Active"
+Write-Host "===================================================================="
+Write-Host ""
 
 # Check if ralph-loop is active
 $ralphStateFile = ".claude/ralph-loop.local.md"
